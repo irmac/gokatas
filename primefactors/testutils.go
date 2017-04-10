@@ -1,5 +1,13 @@
 package katas
 
+import "testing"
+
+func assertThat(t *testing.T, expected, actual []int) {
+	if !sliceCompare(expected, actual) {
+		t.Fatalf("Expected %d but got %d", expected, actual)
+	}
+}
+
 func sliceCompare(a, b []int) bool {
 
 	if bothNil(a, b) {
@@ -19,7 +27,6 @@ func sliceCompare(a, b []int) bool {
 			return false
 		}
 	}
-
 	return true
 }
 
